@@ -1,51 +1,24 @@
-class AddressBook {
-
-
-    get name() { return this._name }
-    set name(name) {
-        let nameRegex = RegExp("[A-Z][a-z]{2,}\\s{1,}[A-Z][a-z]{2,}");
-        if (nameRegex.test(name))
-            this._name = name;
-        else throw "Name is Invalid";
-    }
-
-    get address() { return this.address }
-    set address(address) {
-        let addressRegex = RegExp("[A-Za-z0-9._-/]+");
-        if (addressRegex.test(address))
-            this.address = address;
-        else throw "address is Invalid";
-    }
-
-    get city() {
-        return this._city;
-    }
-    set city(city) {
-        this._city = city;
-    }
-    get state() {
-        return this._state;
-    }
-    set state(state) {
-        this._state = state;
-    }
-    get zip() {
-        return this._zip;
-    }
-    set zip(zip) {
-        this._zip = zip;
-    }
-
-    get phoneNumber() { return this.phoneNumber }
-    set phoneNumber(phoneNumber) {
-        let phoneNumberRegex = RegExp("[+]91 [0-9]{10}");
-        if (phoneNumberRegex.test(phoneNumber))
-            this.phoneNumber = phoneNumber;
-        else throw "Phone Number is Invalid";
-    }
-
-    toString() {
-        return "Name : " + this.name + ", Address : " + this.address + ", City : " + this.city + ", State : " + this.state + ", Zip : " + this.zip + ", Phone Number : " + this.phoneNumber;
-    }
-
-}
+const name = document.querySelector('#name');
+const nameError = document.querySelector('.name-error');
+name.addEventListener('input', function () {
+    let nameRegex = RegExp('[A-Z][a-z]{2,}\\s{1,}[A-Z][a-z]{2,}$');
+    if (nameRegex.test(name.value))
+        nameError.textContent = "";
+    else nameError.textContent = "Name is Incorrect!";
+});
+const address = document.querySelector('#address');
+const addressError = document.querySelector('.address-error');
+address.addEventListener('input', function () {
+    let addressRegex = RegExp('[A-Za-z0-9./_-,]+');
+    if (addressRegex.test(address.value))
+        addressError.textContent = "";
+    else addressError.textContent = "Address is Incorrect!";
+});
+const phoneNumber = document.querySelector('#tel');
+const numberError = document.querySelector('.number-error');
+phoneNumber.addEventListener('input', function () {
+    let numberRegex = RegExp("[+]91 [0-9]{10}");
+    if (numberRegex.test(phoneNumber.value))
+        numberError.textContent = "";
+    else numberError.textContent = "Phone number is Incorrect!";
+});
