@@ -1,4 +1,4 @@
-class Contact {
+class AddressBook {
     get name() {
         return this._name;
     }
