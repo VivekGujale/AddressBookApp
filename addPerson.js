@@ -1,7 +1,7 @@
 const name = document.querySelector('#name');
 const nameError = document.querySelector('.name-error');
 name.addEventListener('input', function () {
-    let nameRegex = RegExp('[A-Z][a-z]{2,}\\s{1,}[A-Z][a-z]{2,}$');
+    let nameRegex = RegExp('[A-Z][a-z]{2,}\\s{1,}[A-Z][a-z]{2,}');
     if (nameRegex.test(name.value))
         nameError.textContent = "";
     else nameError.textContent = "Name is Incorrect!";
@@ -22,3 +22,11 @@ phoneNumber.addEventListener('input', function () {
         numberError.textContent = "";
     else numberError.textContent = "Phone number is Incorrect!";
 });
+
+const save = () => {
+    try {
+        let addressBookData = createAddressBook();
+    } catch (e) {
+        return;
+    }
+}
