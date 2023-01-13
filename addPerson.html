@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Book</title>
     <link rel="stylesheet" href="../AddressBook/addPerson.css">
     </link>
-    <title>Address Book</title>
+    <script defer src="../AddressBook/addPerson.js"></script>
+    <script defer src="../AddressBook/addressBook.js"></script>
 </head>
 
 <body>
@@ -24,7 +26,7 @@
         </div>
     </header>
     <div id="formId" class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save();return false">
+        <form class="form" action="#" onsubmit="save()">
             <div class="form-head">
                 <h2>PERSON ADDRESS FORM</h2>
             </div>
@@ -111,8 +113,6 @@
             </div>
         </form>
     </div>
-    <script defer src="../AddressBook/addPerson.js"></script>
-    <script defer src="../AddressBook/addressBook.js"></script>
 </body>
 
 </html>

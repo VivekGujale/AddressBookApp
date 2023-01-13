@@ -3,7 +3,7 @@ class Contact {
         return this._name;
     }
     set name(name) {
-        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}\\s{1,}[A-Z]{1}[a-z]{2,}$');
+        let nameRegex = RegExp('[A-Z][a-z]{2,}\\s{1,}[A-Z][a-z]{2,}');
         if (nameRegex.test(name))
             this._name = name;
         else throw 'Name is Incorrect!';
@@ -12,7 +12,7 @@ class Contact {
         return this._address;
     }
     set address(address) {
-        let addressRegex = RegExp('^[a-zA-z0-9!@#$%^&*/-]{3,}\\s{0,}[a-zA-z0-9!@#$%^&*/-]{3,}\\s{0,}$');
+        let addressRegex = RegExp('[A-Za-z0-9./_-,]+');
         if (addressRegex.test(address))
             this._address = address;
         else throw 'Address is Incorrect!'
@@ -39,7 +39,7 @@ class Contact {
         return this._phoneNumber;
     }
     set phoneNumber(phoneNumber) {
-        let phoneNumberRegex = RegExp("^[0-9!+-]{10,}$");
+        let phoneNumberRegex = RegExp("[+]91 [0-9]{10}");
         if (phoneNumberRegex.test(phoneNumber))
             this._phoneNumber = phoneNumber;
         else throw 'Phone number is incorrect!'
