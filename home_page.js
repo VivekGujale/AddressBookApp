@@ -44,3 +44,15 @@ const remove = (node) => {
     document.querySelector(".person-count").textContent = addressBookList.length;
     createInnerHtml();
 }
+
+const update = (node) => {
+    let addressBookData = addressBookList.find(personData => personData._name == node.id);
+    if(!addressBookData) return;
+    localStorage.setItem('editBook', JSON.stringify(addressBookData));
+    window.location.replace(site_properties.add_person_page);
+} 
+
+let site_properties={
+    home_page: "home_page.html",
+    add_person_page: "addPerson.html"
+};
