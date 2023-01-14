@@ -1,28 +1,34 @@
+let addressBookList;
 window.addEventListener('DOMContentLoaded', (even) => {
+    addressBookList = getAddressBookDataFromStorage();
+    document.querySelector(".person-count").textContent = addressBookList.length;
     createInnerHtml();
 });
+const getAddressBookDataFromStorage = () => {
+    return localStorage.getItem('AddressBookList') ?
+        JSON.parse(localStorage.getItem('AddressBookList')) : [];
+}
 const createInnerHtml = () => {
-    const innerHtml = `
-        <tr>
-            <th>Full Name</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Zip Code</th>
-            <th>Phone Number</th>
-        </tr>
-        <tr>
-                <td>Sandip Kengar</td>
-                <td>Kalamboli</td>
-                <td>Kalamboli</td>
-                <td>Maharashtra</td>
-                <td>410218</td>
-                <td>+91 9874563214</td>
-                <td>
-                <img id="1" onclick="remove(this)" alt="delete" src="../delete-black-18dp.svg">
-                <img id="1" onclick="update(this)" alt="edit" src="../create-black-18dp.svg">
+    if (addressBookList.length == 0)
+        return;
+    const headerHtml = "<th>Full Name</th><th>Address</th><th>City</th>" +
+        "<th>State</th><th>Zip Code</th><th>Phone Number</th>";
+    let innerHtml = `${headerHtml}`;
+    for (const addressBookData of addressBookList) {
+        innerHtml = `${innerHtml}
+         <tr>
+            <td>${addressBookData._name}</td>
+            <td>${addressBookData._address}</td>
+            <td>${addressBookData._city}</td>
+            <td>${addressBookData._state}</td>
+            <td>${addressBookData._zip}</td>
+            <td>${addressBookData._phoneNumber}</td>
+            <td>
+            <img name="${addressBookData._name}" onclick="remove(this)" alt="delete" src="../delete-black-18dp.svg">
+            <img name="${addressBookData._name}" onclick="update(this)" alt="edit" src="../create-black-18dp.svg">
             </td>
-        </tr>
+         </tr>
         `;
+    }
     document.querySelector('#display').innerHTML = innerHtml;
 } 
