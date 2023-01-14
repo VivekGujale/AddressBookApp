@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const nameError = document.querySelector('.name-error');
     name.addEventListener('input', function () {
-        let nameRegex = RegExp('[A-Z][a-z]{2,}\\s{1,}[A-Z][a-z]{2,}');
+        let nameRegex = RegExp('[A-Z][a-z]{2,} [A-Z][a-z]{2,}');
         if (nameRegex.test(name.value))
             nameError.textContent = "";
         else nameError.textContent = "Name is Incorrect!";
@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const address = document.querySelector('#address');
     const addressError = document.querySelector('.address-error');
     address.addEventListener('input', function () {
-        let addressRegex = RegExp('[A-Za-z0-9./_-,]+');
+        let addressRegex = RegExp('[a-zA-z0-9._&/-]+');
         if (addressRegex.test(address.value))
             addressError.textContent = "";
         else addressError.textContent = "Address is Incorrect!";
