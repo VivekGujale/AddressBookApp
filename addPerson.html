@@ -23,7 +23,7 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
             <div class="form-head" style="text-align:center;">
                 <h2>PERSON ADDRESS FORM</h2>
             </div>
@@ -34,7 +34,8 @@
             </div>
             <div class="row-content">
                 <label class="label text" for="Address"></label>
-                <input class="input" type="text" id="address" name="address" placeholder="Enter Your Address....." required>
+                <input class="input" type="text" id="address" name="address" placeholder="Enter Your Address....."
+                    required>
                 <error-output class="address-error" for="Address"></error-output>
             </div>
             <div class="row-content">
