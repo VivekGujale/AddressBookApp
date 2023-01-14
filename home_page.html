@@ -10,19 +10,28 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
+    <header class="header-content">
+        <div class="logo-content">
             <img src="../AddressBook.jpg" alt="" height="50" width="50">
             <div>
-                <span>ADDRESS</span><br>
-                <span>BOOK</span>
+                <span class="address-text">ADDRESS</span><br>
+                <span class="address-book-text">BOOK</span>
             </div>
         </div>
     </header>
-    </head>
-
-    <body>
-
-    </body>
+    <div class="main-content">
+        <div class="header-content">
+            <div class="person-detail-text" style="font-size: 20px;">
+                Person Details<div class="person-count" style="border-radius: 10%;font-size: 20px;width: 30px;"></div>
+            </div>
+            <a href="addPerson.html" class="add-button">
+                <img src="../add-24px.svg" alt="">Add Person</a>
+        </div>
+    </div>
+    <div class="table-main">
+        <table id="display" class="table">
+        </table>
+    </div>
+</body>
 
 </html>

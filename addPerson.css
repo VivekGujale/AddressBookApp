@@ -9,6 +9,23 @@
     border: solid white;
 }
 
+.address-text {
+    font: normal normal bold 15px/20px Arial;
+    font-family: "Arial";
+    letter-spacing: 0px;
+    color: #1779e9;
+    text-transform: capitalize;
+    font-style: bold;
+}
+
+.address-book-text {
+    font: normal normal bold 15px/20px Arial;
+    font-family: "Arial";
+    color: #2d343a;
+    font-style: bold;
+
+}
+
 .header-content {
     padding-left: 30%;
 
